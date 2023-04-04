@@ -24,6 +24,7 @@ round_min = 0
 round_max = 1
 use_micro = False
 use_meso = False # TODO This might need some work aka run it on SUMO
+use_meso_SUMO = False # run results through SUMO to ensure accuracy 
 use_macro = True
 Number_of_vehicles = 1000
 Random_trips = False
@@ -68,7 +69,7 @@ if __name__ == "__main__":
 
         if use_macro:
             make_Route_file(3,Round_name,network_file,num_iterations)
-            
+
 
     
 
