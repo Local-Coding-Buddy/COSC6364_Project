@@ -1,0 +1,115 @@
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '000/iteration_000_Trips_File.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '000/iteration_000.sumocfg']
+Loading net-file from '000/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (45ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '000/../edgedata.add.xml' ... done (3ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1098.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.21s
+ Real time factor: 5253.59
+ UPS: 308622.009569
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '001/iteration_001_Trips_File_000.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '001/iteration_001.sumocfg']
+Loading net-file from '001/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (34ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '001/../edgedata.add.xml' ... done (2ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1098.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.16s
+ Real time factor: 6695.12
+ UPS: 393207.317073
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '002/iteration_002_Trips_File_001.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '002/iteration_002.sumocfg']
+Loading net-file from '002/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (29ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '002/../edgedata.add.xml' ... done (2ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1098.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.15s
+ Real time factor: 7223.68
+ UPS: 424250.000000
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '003/iteration_003_Trips_File_002.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '003/iteration_003.sumocfg']
+Loading net-file from '003/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (31ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '003/../edgedata.add.xml' ... done (2ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1098.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.15s
+ Real time factor: 7418.92
+ UPS: 435716.216216
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '004/iteration_004_Trips_File_003.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '004/iteration_004.sumocfg']
+Loading net-file from '004/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (28ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '004/../edgedata.add.xml' ... done (2ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1098.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.15s
+ Real time factor: 7223.68
+ UPS: 424250.000000
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

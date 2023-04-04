@@ -3,13 +3,12 @@ import sys
 import copy
 import random
 import time
-import xml.etree.ElementTree as ET
-from xml.dom.minidom import parse, parseString
-from Route_setup.Make_Trips_file import *
+import shutil
+from xml.dom import minidom
 from datetime import datetime
 import sumolib
-import winsound
-from core.SUMO_Execute import *
+import subprocess
+import csv  
 
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -17,8 +16,10 @@ if 'SUMO_HOME' in os.environ:
 else:
     sys.exit("No environment variable SUMO_HOME!")
 
+csv_data = []
+#data2Push = [] #new data aquired that will be pushed
 
-def make_Trips_File(Round_name,net_file,start_edges,end_edges,dependencies,num_trips,use_random_trips):
+def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies=[],num_trips=-1,use_random_trips=False,maximum_release_time=500):
     #Round_name - id for this set of vehicle origin destination matrix.
     #net_file - name of the network
     #start_edges set of valid origins
@@ -26,10 +27,22 @@ def make_Trips_File(Round_name,net_file,start_edges,end_edges,dependencies,num_t
     #
     if num_trips == -1:
         return
-    cwd = os.getcwd()
     
-    if not os.path.isdir("./configurations/rounds/"+Round_name):
-        os.mkdir("./configurations/Rounds/"+Round_name)
+    
+    
+    if use_random_trips:
+        if not os.path.isdir("./configurations/Rounds/"+Round_name):
+            os.mkdir("./configurations/Rounds/"+Round_name)
+        #command from original SUMO-STR code: https://github.com/Local-Coding-Buddy/Selfless-Traffic-Routing-Testbed/blob/master/core/target_vehicles_generation_protocols.py
+        
+        command_str = "python SUMO_Tolls/randomTrips.py -n ./configurations/maps/"+net_file+" -r " +target_xml_file +" -o ./configurations/Rounds/"+Round_name+'Trips_File.rou.xml'
+
+        #-e 50 default is 3600
+        subprocess.call(command_str)
+
+    else:
+        if not os.path.isdir("./configurations/Rounds/"+Round_name):
+            os.mkdir("./configurations/Rounds/"+Round_name)
         #file_name = "str_sumo.rou.xml" # this should stay the same shouldn't have to change to dynamic I believe
         vehicle_dict = {}
         root = minidom.Document()
@@ -41,8 +54,9 @@ def make_Trips_File(Round_name,net_file,start_edges,end_edges,dependencies,num_t
 
         # release times have to be sorted in the route file.
         release_times =[]
-        #TODO look into how random.randint generates trips.
-        
+        for x in range(0,num_trips):
+            release_times.append(random.randint(0,maximum_release_time)) # 400
+        release_times = sorted(release_times)
 
         #Use this for random trips please.
         if not start_edges:
@@ -82,16 +96,200 @@ def make_Trips_File(Round_name,net_file,start_edges,end_edges,dependencies,num_t
             
             #vehicle_dict[str(x+2)]=v_now
         #print("why are you empty:",deadLines2Push)
-        data2Csv_Deadlines(deadlines,Round_name) #insert file name into this as argument
+        #data2Csv_Deadlines(deadlines,Round_name) #insert file name into this as argument
 
         xml_str = root.toprettyxml(indent ="\t") 
         trip_file = "./configurations/Rounds/"+Round_name+'/Trips_File.rou.xml'
         with open(trip_file,"w") as f:
-            #print(xml_str)
             f.write(xml_str)
             f.flush()
             f.close
-        duaBinary = sumolib.checkBinary("duarouter")
         
        
-    
+
+
+def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
+    #micro_meso_macro -> 1 micro simulation 2 meso simulation 3 macro simulation
+    cmd = []
+    if micro_meso_macro == 1: # microscopic
+        if not os.path.isdir("./configurations/Rounds/"+Round_name+"/Microscopic_DUE"):
+            os.mkdir("./configurations/Rounds/"+Round_name+"/Microscopic_DUE")
+            cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
+                    "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations)]
+
+            subprocess.call(cmd)        
+        for x in range(0,Num_Iterations):
+            try:
+                shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Microscopic_DUE")
+            except Exception:
+                pass
+            report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5")
+        pass
+
+    if micro_meso_macro == 2: # mesoscopic
+
+        if not os.path.isdir("./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE"):
+            os.mkdir("./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE")
+
+            cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
+                    "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
+            subprocess.call(cmd)
+
+        for x in range(0,Num_Iterations):
+            try:
+                shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE")
+            except Exception:
+                pass
+            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-DUE.9.5")
+        pass
+
+    if micro_meso_macro == 3: # macroscopic.
+        out_dir = "./configurations/Rounds/"+Round_name+"/Macroscopic_DUE"
+        if not os.path.isdir(out_dir):
+            os.mkdir(out_dir)
+
+            cmd = ["./SUMO_TOOls/marouter", "-r" , "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml","-n",\
+            "./configurations/maps/"+net_file,"-i",str(Num_Iterations),"-o", out_dir+"/Macro_Routes.xml"]
+
+            subprocess.call(cmd) 
+            #need to run sumo here...
+            sumoBinary = sumolib.checkBinary("sumo")
+            sumoCmd = [sumoBinary,#from duaiterate
+                        '--save-configuration',  out_dir +'/myconfig.sumocfg', #/myconfig_0.sumocfg",
+                        '--log', out_dir + "/log.sumo.log",
+                        '--net-file', os.getcwd() + "\\configurations\\maps\\"+net_file,#net_file_temp,# "../../../../../maps/"+net_file,
+                        '--route-files',out_dir+"/Macro_Routes.xml",#old_directory+'/'+trip_file,
+                        '--no-step-log',
+                        '--begin', '0',
+                        '--summary-output',out_dir + "/summary.xml",
+                        ]
+                    #print("the directory:", the_directory)
+
+                    #print("SUMOCMD:",sumoCmd)
+            subprocess.call(sumoCmd)
+            subprocess.call([sumoBinary, "-c", out_dir+'/myconfig.sumocfg', \
+                        "--tripinfo-output", out_dir+'/trips.trips.xml', \
+                        "--quit-on-end" ])
+            #TODO add reporting here.
+        pass
+        report("./configurations/Rounds/"+Round_name+'/Macroscopic_DUE', Round_name,0,"duaIterate","Macro-DUE.9.5")
+
+    pass
+
+
+def report(location, Round_name,iter,run_id,version,deadline_dict={}): #From https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
+        
+        # if not deadline_dict:
+        #     deadlines = pd.read_csv("./configurations/Rounds/"+Round_name+'/SUMO_Trip_Deadline_Data.csv')
+        #     deadline_dict ={}
+        #     vid = deadlines["vehicle_id"].values
+        #     DL=deadlines["deadline"].values
+
+        #     for x in range(len(vid)):
+        #         #print("vehicle:",vid[x])
+        #         deadline_dict[vid[x]]=DL[x]
+        doc2 = minidom
+        #print("location:",location)
+        #print("iter:",iter)
+        try:
+            doc2 = minidom.parse(location+'/summary.xml')
+        except Exception as e:
+            #print("exception 2:",e)
+            try: 
+                doc2 = minidom.parse(location+'/summary_%03i.xml'%iter)
+            except Exception as e:
+                #print("exception 2:",e)
+                pass
+            pass
+        step_info = doc2.getElementsByTagName("step")
+        last_entry = step_info[len(step_info)-1]
+        #print(last_entry)
+        total_timespan = last_entry.getAttribute("time") #getting the time of the last entry to the time it took to run.
+        #print(total_timespan)
+        vehicles_finished = float(last_entry.getAttribute("arrived")) #number of vehicles to finish.
+        doc = minidom
+        try:
+            doc = minidom.parse(location+'/trips.trips.xml')
+        except Exception:
+            try: 
+                doc = minidom.parse(location+'/trips_%03i.trips.xml'%iter)
+            except Exception:
+                try: 
+                    doc = minidom.parse(location+'/tripinfo_%03i.xml'%iter)
+                except Exception:
+                    pass
+        pass
+
+        trip_infos = doc.getElementsByTagName("tripinfo")
+
+
+
+        total_travel_time = 0
+        max_travel_time = 0
+        deadline_overtime = 0
+        deadline_misses = 0
+        for x in trip_infos:
+            veh_id= float(x.getAttribute("id"))
+            veh_fin = float(x.getAttribute("arrival"))
+            # if deadline_dict[veh_id] < veh_fin:
+            #     deadline_misses+=1
+            #     deadline_overtime += veh_fin - deadline_dict[veh_id]
+
+            tt =  float(x.getAttribute("duration"))
+            total_travel_time += tt
+            if tt > max_travel_time:
+                max_travel_time = tt
+
+        round_name_temp = Round_name
+        if iter>-1:    
+            round_name_temp += '-Iteration-'+str(iter)
+        
+
+        average_travel_time = total_travel_time/len(trip_infos)
+        temp = []
+        overall = []
+        temp.append(round_name_temp)
+        temp.append(run_id)
+        temp.append(version)
+        temp.append(total_timespan)
+        temp.append(total_travel_time)
+        temp.append(average_travel_time)
+        temp.append(max_travel_time)
+        temp.append(len(trip_infos))
+        temp.append(vehicles_finished)
+        temp.append(deadline_misses)
+        temp.append(deadline_overtime)
+        overall.append(temp)
+        csv2Data('./History/results.csv')
+        data2Csv_general(overall,'./History/results.csv')
+
+def data2Csv_general(data_selected,directory):
+    with open(directory, 'w',newline='') as f:
+      
+        # using csv.writer method from CSV package
+        write = csv.writer(f)
+        pushing = []
+        #write.writerow(fields)
+        if not csv_data:#csv_data global value I should get from a csv2data method
+            pushing = data_selected
+        else:
+            pushing = csv_data+data_selected
+        write.writerows(pushing)    
+        f.flush()
+        f.close    
+ 
+
+def csv2Data(file_name_and_directory):
+    # with open('./history/SUMO_Trips_Data.csv','r') as f2:
+    global csv_data
+    #global data2Push
+
+    csv_data = []
+    #data2Push = []
+    #print("is this really blank?",file_name_and_directory)
+    with open(file_name_and_directory,'r',encoding='cp932', errors='ignore') as f2:
+        reader = csv.reader(f2)
+        #print(reader)
+        for item in reader:
+            #print(item)
+            csv_data.append(item)

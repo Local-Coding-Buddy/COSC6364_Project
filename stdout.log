@@ -1,0 +1,71 @@
+> Executing step 0
+>> Running router on ./configurations/Rounds/4corners_neighborhoods.net.xml-test-0/Trips_File.rou.xml
+>>> Begin time: 2023-04-03 18:01:31.313656
+>>> End time: 2023-04-03 18:01:31.756457
+>>> Duration: 0:00:00.442801
+<<
+>> Running simulation
+>>> Begin time: 2023-04-03 18:01:31.756457
+>>> End time: 2023-04-03 18:01:32.421077
+>>> Duration: 0:00:00.664620
+<<
+< Step 0 ended (duration: 0:00:01.107421)
+------------------
+
+> Executing step 1
+>> Running router on 000/Trips_File_000.rou.alt.xml
+>>> Begin time: 2023-04-03 18:01:32.445326
+>>> End time: 2023-04-03 18:01:32.894588
+>>> Duration: 0:00:00.449262
+<<
+>> Running simulation
+>>> Begin time: 2023-04-03 18:01:32.894588
+>>> End time: 2023-04-03 18:01:33.382526
+>>> Duration: 0:00:00.487938
+<<
+< Step 1 ended (duration: 0:00:00.937200)
+------------------
+
+> Executing step 2
+>> Running router on 001/Trips_File_001.rou.alt.xml
+>>> Begin time: 2023-04-03 18:01:33.387082
+>>> End time: 2023-04-03 18:01:33.741801
+>>> Duration: 0:00:00.354719
+<<
+>> Running simulation
+>>> Begin time: 2023-04-03 18:01:33.741801
+>>> End time: 2023-04-03 18:01:34.335365
+>>> Duration: 0:00:00.593564
+<<
+< Step 2 ended (duration: 0:00:00.948283)
+------------------
+
+> Executing step 3
+>> Running router on 002/Trips_File_002.rou.alt.xml
+>>> Begin time: 2023-04-03 18:01:34.360357
+>>> End time: 2023-04-03 18:01:35.052137
+>>> Duration: 0:00:00.691780
+<<
+>> Running simulation
+>>> Begin time: 2023-04-03 18:01:35.052137
+>>> End time: 2023-04-03 18:01:35.523963
+>>> Duration: 0:00:00.471826
+<<
+< Step 3 ended (duration: 0:00:01.164605)
+------------------
+
+> Executing step 4
+>> Running router on 003/Trips_File_003.rou.alt.xml
+>>> Begin time: 2023-04-03 18:01:35.557952
+>>> End time: 2023-04-03 18:01:36.048620
+>>> Duration: 0:00:00.490668
+<<
+>> Running simulation
+>>> Begin time: 2023-04-03 18:01:36.048620
+>>> End time: 2023-04-03 18:01:36.526070
+>>> Duration: 0:00:00.477450
+<<
+< Step 4 ended (duration: 0:00:00.969118)
+------------------
+
+dua-iterate ended (duration: 0:00:05.236993)

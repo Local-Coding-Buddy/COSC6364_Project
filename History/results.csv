@@ -1,0 +1,12 @@
+Round_name,Run_id,Version,Total_timespan,Total_travel_time,Average_travel_Time,Max_Travel_time,Total_#_cars,#_finished,Deadline Misses,Deadline_overTime
+4corners_neighborhoods.net.xml-test-0-Iteration-0,duaIterate,Micro-DUE.9.5,1708.00,312110.0,312.11,1309.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-1,duaIterate,Micro-DUE.9.5,1413.00,199168.0,199.168,606.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-2,duaIterate,Micro-DUE.9.5,1407.00,185199.0,185.199,569.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-3,duaIterate,Micro-DUE.9.5,1326.00,174783.0,174.783,526.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-4,duaIterate,Micro-DUE.9.5,1327.00,179535.0,179.535,507.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-0,duaIterate,Meso-DUE.9.5,1097.00,64502.0,64.502,118.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-1,duaIterate,Meso-DUE.9.5,1097.00,64486.0,64.486,118.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-2,duaIterate,Meso-DUE.9.5,1097.00,64486.0,64.486,118.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-3,duaIterate,Meso-DUE.9.5,1097.00,64486.0,64.486,118.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-4,duaIterate,Meso-DUE.9.5,1097.00,64486.0,64.486,118.0,1000,1000.0,0,0
+4corners_neighborhoods.net.xml-test-0-Iteration-0,duaIterate,Macro-DUE.9.5,1378.00,185750.0,185.75,895.0,1000,1000.0,0,0
