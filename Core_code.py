@@ -120,14 +120,17 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
     #micro_meso_macro -> 1 micro simulation 2 meso simulation 3 macro simulation
     cmd = []
     if micro_meso_macro == 1: # microscopic
-
+        #
         out_dir= "./configurations/Rounds/"+Round_name+"/Microscopic_DUE"
         if not os.path.isdir(out_dir):
             os.mkdir(out_dir)
-            cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
-                    "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations)]
 
-            subprocess.call(cmd)        
+        #Need to run these each time in order to get computation time. #Will overwrite results!!!!
+        cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
+                "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations)]
+        c_time = time.time()
+        subprocess.call(cmd)
+        c_time = time.time()-c_time        
         for x in range(0,Num_Iterations):
             try:
                 shutil.move("%03i"%x,out_dir)
@@ -135,7 +138,7 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
                 pass
             run_SUMO(out_dir,x,net_file)
         for x in range(0,Num_Iterations):
-            report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5")
+            report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5",time)
         pass
 
 
@@ -144,10 +147,12 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
         out_dir="./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE"
         if not os.path.isdir(out_dir):
             os.mkdir("./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE")
-
-            cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
-                    "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
-            subprocess.call(cmd)
+        #Need to run these each time in order to get computation time. #Will overwrite results!!!!
+        cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
+                "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
+        c_time = time.time()
+        subprocess.call(cmd)
+        c_time = time.time()-c_time  
 
         for x in range(0,Num_Iterations):
             try:
@@ -157,44 +162,48 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
             run_SUMO(out_dir,x,net_file)
                         
         for x in range(0,Num_Iterations):
-            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-DUE.9.5")
+            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-DUE.9.5",time)
         pass
 
     if micro_meso_macro == 3: # macroscopic.
         out_dir = "./configurations/Rounds/"+Round_name+"/Macroscopic_DUE"
         if not os.path.isdir(out_dir):
             os.mkdir(out_dir)
+        #Need to run these each time in order to get computation time. #Will overwrite results!!!!
+        cmd = ["./SUMO_TOOls/marouter", "-r" , "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml","-n",\
+        "./configurations/maps/"+net_file,"-i",str(Num_Iterations),"-o", out_dir+"/Macro_Routes.xml"]
 
-            cmd = ["./SUMO_TOOls/marouter", "-r" , "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml","-n",\
-            "./configurations/maps/"+net_file,"-i",str(Num_Iterations),"-o", out_dir+"/Macro_Routes.xml"]
-
-            subprocess.call(cmd) 
+        c_time = time.time()
+        subprocess.call(cmd)
+        c_time = time.time()-c_time  
             
             #need to run sumo here...
             run_SUMO(out_dir,x,net_file)
             
-        report("./configurations/Rounds/"+Round_name+'/Macroscopic_DUE', Round_name,0,"duaIterate","Macro-DUE.9.5")
+        report("./configurations/Rounds/"+Round_name+'/Macroscopic_DUE', Round_name,0,"duaIterate","Macro-DUE.9.5",time)
 
     pass
     if micro_meso_macro == 4: # mesoscopic
         out_dir = "./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE"
         if not os.path.isdir(out_dir):
             os.mkdir(out_dir)
-
-            cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
-                    "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
-            subprocess.call(cmd)
-
-            for x in range(0,Num_Iterations):
-                try:
-                    shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE")
-                except Exception:
-                    pass
-                sumoBinary = sumolib.checkBinary("sumo")
-                run_SUMO(out_dir,x,net_file)
+        #Need to run these each time in order to get computation time. #Will overwrite results!!!!
+        cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
+                "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
+        c_time = time.time()
+        subprocess.call(cmd)
+        c_time = time.time()-c_time  # TODO get time from just running the simulation or also from running SUMO to verify the results
 
         for x in range(0,Num_Iterations):
-            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_SUMO_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-SUMO-DUE.9.5")
+            try:
+                shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE")
+            except Exception:
+                pass
+            sumoBinary = sumolib.checkBinary("sumo")
+            run_SUMO(out_dir,x,net_file)
+
+        for x in range(0,Num_Iterations):
+            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_SUMO_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-SUMO-DUE.9.5",time)
         pass
 
 def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #From https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
