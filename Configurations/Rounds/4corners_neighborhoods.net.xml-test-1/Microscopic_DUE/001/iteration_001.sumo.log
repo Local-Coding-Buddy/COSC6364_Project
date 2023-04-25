@@ -1,0 +1,25 @@
+Loading net-file from '001/../configurations/maps/4corners_neighborhoods.net.xml' ... done (35ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
+Loading additional-files from '001/../edgedata.add.xml' ... done (1ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Warning: Teleporting vehicle '162'; waited too long (yield), lane='597602756#4_0', time=531.00.
+Warning: Vehicle '162' ends teleporting on edge '-44884821#12', time=531.00.
+Warning: Teleporting vehicle '377'; waited too long (yield), lane='597602756#4_0', time=953.00.
+Warning: Vehicle '377' ends teleporting on edge '-44884821#12', time=953.00.
+Warning: Teleporting vehicle '401'; waited too long (yield), lane='597602756#4_0', time=1258.00.
+Warning: Vehicle '401' ends teleporting on edge '-44884821#12', time=1258.00.
+Simulation ended at time: 1415.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 27.32s
+ Real time factor: 51.8011
+ UPS: 7923.378240
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+ Teleports: 3 (Yield: 3)
+

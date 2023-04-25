@@ -19,7 +19,7 @@ else:
 csv_data = []
 #data2Push = [] #new data aquired that will be pushed
 
-def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies=[],num_trips=-1,use_random_trips=False,maximum_release_time=500):
+def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies=[],num_trips=-1,use_random_trips=False,maximum_release_time=500,Random_trips=False):
     #Round_name - id for this set of vehicle origin destination matrix.
     #net_file - name of the network
     #start_edges set of valid origins
@@ -30,20 +30,10 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
     
     
     
-    if use_random_trips:
-        if not os.path.isdir("./configurations/Rounds/"+Round_name):
-            os.mkdir("./configurations/Rounds/"+Round_name)
-        #command from original SUMO-STR code: https://github.com/Local-Coding-Buddy/Selfless-Traffic-Routing-Testbed/blob/master/core/target_vehicles_generation_protocols.py
-        
-        command_str = "python SUMO_Tolls/randomTrips.py -n ./configurations/maps/"+net_file+" -r " +target_xml_file +" -o ./configurations/Rounds/"+Round_name+'Trips_File.rou.xml'
-
-        #-e 50 default is 3600
-        subprocess.call(command_str)
-
-    else:
-        if not os.path.isdir("./configurations/Rounds/"+Round_name):
-            os.mkdir("./configurations/Rounds/"+Round_name)
-        #file_name = "str_sumo.rou.xml" # this should stay the same shouldn't have to change to dynamic I believe
+    
+    if not os.path.isdir("./configurations/Rounds/"+Round_name):
+        os.mkdir("./configurations/Rounds/"+Round_name)
+    #file_name = "str_sumo.rou.xml" # this should stay the same shouldn't have to change to dynamic I believe
         vehicle_dict = {}
         root = minidom.Document()
         xml = root.createElement('routes')
@@ -59,7 +49,7 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
         release_times = sorted(release_times)
 
         #Use this for random trips please.
-        if not start_edges:
+        if Random_trips or not start_edges:
             net = sumolib.net.readNet('./configurations/maps/'+net_file)
             edges = net.getEdges()
             for current_edge in edges:
@@ -104,31 +94,55 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
             f.write(xml_str)
             f.flush()
             f.close
-        
+        #exit()
        
+def run_SUMO(out_dir,x,net_file):
+    sumoBinary = sumolib.checkBinary("sumo")
+    sumoCmd = [sumoBinary,#from duaiterate
+                '--save-configuration',  out_dir +"/%03i"%x+'/myconfig.sumocfg', #/myconfig_0.sumocfg",
+                '--log', out_dir +"/%03i"%x+ "/log.sumo.log",
+                '--net-file', os.getcwd() + "\\configurations\\maps\\"+net_file,#net_file_temp,# "../../../../../maps/"+net_file,
+                '--route-files',out_dir+"/%03i"%x+"/Trips_File_%03i.rou.xml"%x ,#old_directory+'/'+trip_file,
+                '--no-step-log',
+                '--begin', '0',
+                '--summary-output',out_dir +"/%03i"%x+ "/summary.xml",
+                '--statistic-output',out_dir+"/%03i"%x+"/stats_output.xml"
+                    ]
+                #print("the directory:", the_directory)
 
+                #print("SUMOCMD:",sumoCmd)
+    subprocess.call(sumoCmd)
+    subprocess.call([sumoBinary, "-c", out_dir+"/%03i"%x+'/myconfig.sumocfg', \
+                "--tripinfo-output", out_dir+"/%03i"%x+'/trips.trips.xml', \
+                "--quit-on-end" ])
 
 def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
     #micro_meso_macro -> 1 micro simulation 2 meso simulation 3 macro simulation
     cmd = []
     if micro_meso_macro == 1: # microscopic
-        if not os.path.isdir("./configurations/Rounds/"+Round_name+"/Microscopic_DUE"):
-            os.mkdir("./configurations/Rounds/"+Round_name+"/Microscopic_DUE")
+
+        out_dir= "./configurations/Rounds/"+Round_name+"/Microscopic_DUE"
+        if not os.path.isdir(out_dir):
+            os.mkdir(out_dir)
             cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
                     "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations)]
 
             subprocess.call(cmd)        
         for x in range(0,Num_Iterations):
             try:
-                shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Microscopic_DUE")
+                shutil.move("%03i"%x,out_dir)
             except Exception:
                 pass
+            run_SUMO(out_dir,x,net_file)
+        for x in range(0,Num_Iterations):
             report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5")
         pass
 
+
     if micro_meso_macro == 2: # mesoscopic
 
-        if not os.path.isdir("./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE"):
+        out_dir="./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE"
+        if not os.path.isdir(out_dir):
             os.mkdir("./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE")
 
             cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
@@ -140,6 +154,9 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
                 shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE")
             except Exception:
                 pass
+            run_SUMO(out_dir,x,net_file)
+                        
+        for x in range(0,Num_Iterations):
             report("./configurations/Rounds/"+Round_name+'/Mesoscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-DUE.9.5")
         pass
 
@@ -152,42 +169,36 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
             "./configurations/maps/"+net_file,"-i",str(Num_Iterations),"-o", out_dir+"/Macro_Routes.xml"]
 
             subprocess.call(cmd) 
+            
             #need to run sumo here...
-            sumoBinary = sumolib.checkBinary("sumo")
-            sumoCmd = [sumoBinary,#from duaiterate
-                        '--save-configuration',  out_dir +'/myconfig.sumocfg', #/myconfig_0.sumocfg",
-                        '--log', out_dir + "/log.sumo.log",
-                        '--net-file', os.getcwd() + "\\configurations\\maps\\"+net_file,#net_file_temp,# "../../../../../maps/"+net_file,
-                        '--route-files',out_dir+"/Macro_Routes.xml",#old_directory+'/'+trip_file,
-                        '--no-step-log',
-                        '--begin', '0',
-                        '--summary-output',out_dir + "/summary.xml",
-                        ]
-                    #print("the directory:", the_directory)
-
-                    #print("SUMOCMD:",sumoCmd)
-            subprocess.call(sumoCmd)
-            subprocess.call([sumoBinary, "-c", out_dir+'/myconfig.sumocfg', \
-                        "--tripinfo-output", out_dir+'/trips.trips.xml', \
-                        "--quit-on-end" ])
-            #TODO add reporting here.
-        pass
+            run_SUMO(out_dir,x,net_file)
+            
         report("./configurations/Rounds/"+Round_name+'/Macroscopic_DUE', Round_name,0,"duaIterate","Macro-DUE.9.5")
 
     pass
+    if micro_meso_macro == 4: # mesoscopic
+        out_dir = "./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE"
+        if not os.path.isdir(out_dir):
+            os.mkdir(out_dir)
 
+            cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
+                    "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
+            subprocess.call(cmd)
 
-def report(location, Round_name,iter,run_id,version,deadline_dict={}): #From https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
+            for x in range(0,Num_Iterations):
+                try:
+                    shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE")
+                except Exception:
+                    pass
+                sumoBinary = sumolib.checkBinary("sumo")
+                run_SUMO(out_dir,x,net_file)
+
+        for x in range(0,Num_Iterations):
+            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_SUMO_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-SUMO-DUE.9.5")
+        pass
+
+def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #From https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
         
-        # if not deadline_dict:
-        #     deadlines = pd.read_csv("./configurations/Rounds/"+Round_name+'/SUMO_Trip_Deadline_Data.csv')
-        #     deadline_dict ={}
-        #     vid = deadlines["vehicle_id"].values
-        #     DL=deadlines["deadline"].values
-
-        #     for x in range(len(vid)):
-        #         #print("vehicle:",vid[x])
-        #         deadline_dict[vid[x]]=DL[x]
         doc2 = minidom
         #print("location:",location)
         #print("iter:",iter)
@@ -231,10 +242,6 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={}): #From htt
         for x in trip_infos:
             veh_id= float(x.getAttribute("id"))
             veh_fin = float(x.getAttribute("arrival"))
-            # if deadline_dict[veh_id] < veh_fin:
-            #     deadline_misses+=1
-            #     deadline_overtime += veh_fin - deadline_dict[veh_id]
-
             tt =  float(x.getAttribute("duration"))
             total_travel_time += tt
             if tt > max_travel_time:

@@ -3,113 +3,134 @@
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '000/iteration_000.sumocfg']
-Loading net-file from '000/../configurations/maps/4corners_neighborhoods.net.xml' ... 
-Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
-done (45ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading net-file from '000/../configurations/maps/4corners_neighborhoods.net.xml' ... done (37ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
 Loading additional-files from '000/../edgedata.add.xml' ... done (3ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1098.00
+Warning: Teleporting vehicle '53'; waited too long (yield), lane='597602756#4_0', time=491.00.
+Warning: Vehicle '53' ends teleporting on edge '-44884821#12', time=491.00.
+Warning: Teleporting vehicle '103'; waited too long (yield), lane='597602756#4_0', time=967.00.
+Warning: Vehicle '103' ends teleporting on edge '-44884821#12', time=967.00.
+Simulation ended at time: 1706.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.21s
- Real time factor: 5253.59
- UPS: 308622.009569
+ Duration: 45.72s
+ Real time factor: 37.3174
+ UPS: 7026.249016
 Vehicles: 
  Inserted: 1000
  Running: 0
  Waiting: 0
+ Teleports: 2 (Yield: 2)
 
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '001/iteration_001_Trips_File_000.duarcfg']
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '001/iteration_001.sumocfg']
-Loading net-file from '001/../configurations/maps/4corners_neighborhoods.net.xml' ... 
-Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
-done (34ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
-Loading additional-files from '001/../edgedata.add.xml' ... done (2ms).
+Loading net-file from '001/../configurations/maps/4corners_neighborhoods.net.xml' ... done (42ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
+Loading additional-files from '001/../edgedata.add.xml' ... done (3ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1098.00
+Warning: Teleporting vehicle '209'; waited too long (yield), lane='597602756#4_0', time=548.00.
+Warning: Vehicle '209' ends teleporting on edge '-44884821#12', time=548.00.
+Warning: Teleporting vehicle '243'; waited too long (yield), lane='597602756#4_0', time=886.00.
+Warning: Vehicle '243' ends teleporting on edge '-44884821#12', time=886.00.
+Simulation ended at time: 1397.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.16s
- Real time factor: 6695.12
- UPS: 393207.317073
+ Duration: 34.74s
+ Real time factor: 40.2176
+ UPS: 5964.906725
 Vehicles: 
  Inserted: 1000
  Running: 0
  Waiting: 0
+ Teleports: 2 (Yield: 2)
 
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '002/iteration_002_Trips_File_001.duarcfg']
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '002/iteration_002.sumocfg']
-Loading net-file from '002/../configurations/maps/4corners_neighborhoods.net.xml' ... 
-Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
-done (29ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
-Loading additional-files from '002/../edgedata.add.xml' ... done (2ms).
+Loading net-file from '002/../configurations/maps/4corners_neighborhoods.net.xml' ... done (46ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
+Loading additional-files from '002/../edgedata.add.xml' ... done (12ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1098.00
+Warning: Teleporting vehicle '209'; waited too long (yield), lane='597602756#4_0', time=550.00.
+Warning: Vehicle '209' ends teleporting on edge '-44884821#12', time=550.00.
+Warning: Teleporting vehicle '581'; waited too long (yield), lane='597602756#4_0', time=1205.00.
+Warning: Vehicle '581' ends teleporting on edge '-44884821#12', time=1205.00.
+Simulation ended at time: 1471.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.15s
- Real time factor: 7223.68
- UPS: 424250.000000
+ Duration: 42.00s
+ Real time factor: 35.028
+ UPS: 5333.349208
 Vehicles: 
  Inserted: 1000
  Running: 0
  Waiting: 0
+ Teleports: 2 (Yield: 2)
 
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '003/iteration_003_Trips_File_002.duarcfg']
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '003/iteration_003.sumocfg']
-Loading net-file from '003/../configurations/maps/4corners_neighborhoods.net.xml' ... 
-Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
-done (31ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
-Loading additional-files from '003/../edgedata.add.xml' ... done (2ms).
+Loading net-file from '003/../configurations/maps/4corners_neighborhoods.net.xml' ... done (507ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
+Loading additional-files from '003/../edgedata.add.xml' ... done (75ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1098.00
+Warning: Teleporting vehicle '581'; waited too long (yield), lane='597602756#4_0', time=935.00.
+Warning: Vehicle '581' ends teleporting on edge '-44884821#12', time=935.00.
+Simulation ended at time: 1410.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.15s
- Real time factor: 7418.92
- UPS: 435716.216216
+ Duration: 43.34s
+ Real time factor: 32.5365
+ UPS: 4746.123315
 Vehicles: 
  Inserted: 1000
  Running: 0
  Waiting: 0
+ Teleports: 1 (Yield: 1)
 
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '004/iteration_004_Trips_File_003.duarcfg']
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '004/iteration_004.sumocfg']
-Loading net-file from '004/../configurations/maps/4corners_neighborhoods.net.xml' ... 
-Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
-done (28ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
-Loading additional-files from '004/../edgedata.add.xml' ... done (2ms).
+Loading net-file from '004/../configurations/maps/4corners_neighborhoods.net.xml' ... done (144ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
+Loading additional-files from '004/../edgedata.add.xml' ... done (4ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1098.00
+Warning: Teleporting vehicle '499'; waited too long (yield), lane='597602756#4_0', time=850.00.
+Warning: Vehicle '499' ends teleporting on edge '-44884821#12', time=850.00.
+Simulation ended at time: 1381.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.15s
- Real time factor: 7223.68
- UPS: 424250.000000
+ Duration: 33.55s
+ Real time factor: 41.1686
+ UPS: 5708.570577
 Vehicles: 
  Inserted: 1000
  Running: 0
  Waiting: 0
+ Teleports: 1 (Yield: 1)
 

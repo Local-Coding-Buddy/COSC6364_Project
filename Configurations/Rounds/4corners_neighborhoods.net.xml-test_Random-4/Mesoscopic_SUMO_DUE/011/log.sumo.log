@@ -1,0 +1,3 @@
+Loading net-file from 'C:\Users\Local_Man\Desktop\Stolen Music\school stuff for college\Semester 15 (UH Graduate School)\COSC 6364 Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\4corners_neighborhoods.net.xml' ... done (73ms).
+Error: The route file './configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-4/Mesoscopic_SUMO_DUE/011/Trips_File_011.rou.xml' is not accessible.
+Quitting (on error).

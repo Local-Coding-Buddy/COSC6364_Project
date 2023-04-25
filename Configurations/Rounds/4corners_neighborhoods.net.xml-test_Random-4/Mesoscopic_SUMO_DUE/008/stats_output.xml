@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-04-24 16:31:01 by Eclipse SUMO sumo Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\Local_Man\Desktop\Stolen%20Music\school%20stuff%20for%20college\Semester%2015%20(UH%20Graduate%20School)\COSC%206364%20Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\4corners_neighborhoods.net.xml"/>
+        <route-files value="./configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-4/Mesoscopic_SUMO_DUE/008/Trips_File_008.rou.xml"/>
+    </input>
+
+    <output>
+        <summary-output value="./configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-4/Mesoscopic_SUMO_DUE/008/summary.xml"/>
+        <tripinfo-output value="./configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-4/Mesoscopic_SUMO_DUE/008/trips.trips.xml"/>
+        <statistic-output value="./configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-4/Mesoscopic_SUMO_DUE/008/stats_output.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+
+    <report>
+        <log value="./configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-4/Mesoscopic_SUMO_DUE/008/log.sumo.log"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <gui_only>
+        <quit-on-end value="true"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+</statistics>
