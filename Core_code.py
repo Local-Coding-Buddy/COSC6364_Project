@@ -242,7 +242,13 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #F
 
         trip_infos = doc.getElementsByTagName("tripinfo")
 
+        try:
+            doc = minidom.parse(location+'/stats_output.xml')
+        except Exception:
+            pass
 
+        stat_o = doc.getElementsByTagName("statistics")
+        
 
         total_travel_time = 0
         max_travel_time = 0
@@ -259,7 +265,8 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #F
         round_name_temp = Round_name
         if iter>-1:    
             round_name_temp += '-Iteration-'+str(iter)
-        
+        # <teleports total="1" jam="0" yield="1" wrongLane="0"/>
+        # <safety collisions="0" emergencyStops="0"/>
 
         average_travel_time = total_travel_time/len(trip_infos)
         temp = []
@@ -275,6 +282,8 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #F
         temp.append(vehicles_finished)
         temp.append(deadline_misses)
         temp.append(deadline_overtime)
+        temp.append(time)
+        
         overall.append(temp)
         csv2Data('./History/results.csv')
         data2Csv_general(overall,'./History/results.csv')
