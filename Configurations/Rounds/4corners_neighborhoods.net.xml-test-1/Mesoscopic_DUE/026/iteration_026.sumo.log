@@ -1,16 +1,16 @@
 Loading net-file from '026/../configurations/maps/4corners_neighborhoods.net.xml' ... 
 Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
-done (39ms).
+done (29ms).
 Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
-Loading additional-files from '026/../edgedata.add.xml' ... done (2ms).
+Loading additional-files from '026/../edgedata.add.xml' ... done (1ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1110.00
+Simulation ended at time: 1107.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.17s
- Real time factor: 6646.71
- UPS: 385233.532934
+ Duration: 0.14s
+ Real time factor: 7687.5
+ UPS: 448319.444444
 Vehicles: 
  Inserted: 1000
  Running: 0

@@ -1,16 +1,16 @@
-Loading net-file from '002/../configurations/maps/4corners_neighborhoods.net.xml' ... done (58ms).
+Loading net-file from '002/../configurations/maps/4corners_neighborhoods.net.xml' ... done (31ms).
 Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
 Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
 Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
-Loading additional-files from '002/../edgedata.add.xml' ... done (2ms).
+Loading additional-files from '002/../edgedata.add.xml' ... done (1ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1299.00
+Simulation ended at time: 1379.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 35.83s
- Real time factor: 36.2586
- UPS: 5813.878189
+ Duration: 20.44s
+ Real time factor: 67.4526
+ UPS: 8901.535903
 Vehicles: 
  Inserted: 1000
  Running: 0

@@ -5,21 +5,19 @@ Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_
 Loading additional-files from '007/../edgedata.add.xml' ... done (2ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Warning: Teleporting vehicle '162'; waited too long (yield), lane='597602756#4_0', time=537.00.
-Warning: Vehicle '162' ends teleporting on edge '-44884821#12', time=537.00.
-Warning: Teleporting vehicle '377'; waited too long (yield), lane='597602756#4_0', time=911.00.
-Warning: Vehicle '377' ends teleporting on edge '-44884821#12', time=911.00.
-Warning: Teleporting vehicle '448'; waited too long (yield), lane='597602756#4_0', time=1216.00.
-Warning: Vehicle '448' ends teleporting on edge '-44884821#12', time=1216.00.
-Simulation ended at time: 1327.00
+Warning: Teleporting vehicle '247'; waited too long (yield), lane='597602756#4_0', time=675.00.
+Warning: Vehicle '247' ends teleporting on edge '-44884821#12', time=675.00.
+Warning: Teleporting vehicle '282'; waited too long (yield), lane='597602756#4_0', time=980.00.
+Warning: Vehicle '282' ends teleporting on edge '-44884821#12', time=980.00.
+Simulation ended at time: 1424.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 24.43s
- Real time factor: 54.3162
- UPS: 8003.438255
+ Duration: 22.44s
+ Real time factor: 63.4496
+ UPS: 8858.931515
 Vehicles: 
  Inserted: 1000
  Running: 0
  Waiting: 0
- Teleports: 3 (Yield: 3)
+ Teleports: 2 (Yield: 2)
 

@@ -1,18 +1,19 @@
-Loading net-file from '026/../configurations/maps/4corners_neighborhoods.net.xml' ... done (30ms).
+Loading net-file from '026/../configurations/maps/4corners_neighborhoods.net.xml' ... done (31ms).
 Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
 Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
 Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
-Loading additional-files from '026/../edgedata.add.xml' ... done (2ms).
+Loading additional-files from '026/../edgedata.add.xml' ... done (1ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Warning: Teleporting vehicle '7'; waited too long (yield), lane='597602756#4_0', time=371.00.
-Warning: Vehicle '7' ends teleporting on edge '-44884821#12', time=371.00.
-Simulation ended at time: 1318.00
+Warning: Vehicle '227' performs emergency braking on lane ':cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975_10_0' with decel=9.00, wished=4.50, severity=1.00, time=352.00.
+Warning: Teleporting vehicle '282'; waited too long (yield), lane='597602756#4_0', time=879.00.
+Warning: Vehicle '282' ends teleporting on edge '-44884821#12', time=879.00.
+Simulation ended at time: 1310.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 23.48s
- Real time factor: 56.1353
- UPS: 8284.424379
+ Duration: 20.09s
+ Real time factor: 65.1968
+ UPS: 8901.308914
 Vehicles: 
  Inserted: 1000
  Running: 0

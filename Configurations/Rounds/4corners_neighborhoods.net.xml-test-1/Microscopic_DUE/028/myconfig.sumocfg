@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-04-29 15:04:50 by Eclipse SUMO sumo Version 1.16.0
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\Local_Man\Desktop\Stolen%20Music\school%20stuff%20for%20college\Semester%2015%20(UH%20Graduate%20School)\COSC%206364%20Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\4corners_neighborhoods.net.xml"/>
+        <route-files value="Trips_File_028.rou.xml"/>
+    </input>
+
+    <output>
+        <summary-output value="summary.xml"/>
+        <statistic-output value="stats_output.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+
+    <report>
+        <log value="log.sumo.log"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>

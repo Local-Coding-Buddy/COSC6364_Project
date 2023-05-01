@@ -1,0 +1,16 @@
+Loading net-file from '000/../configurations/maps/Random_English.net.xml' ... done (115ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '000/../edgedata.add.xml' ... done (3ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1270.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.63s
+ Real time factor: 2019.08
+ UPS: 201316.375199
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

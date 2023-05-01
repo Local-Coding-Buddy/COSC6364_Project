@@ -1,0 +1,15 @@
+Loading net-file from '002/../configurations/maps/Random_English.net.xml' ... done (129ms).
+Loading additional-files from '002/../edgedata.add.xml' ... done (3ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1313.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 23.21s
+ Real time factor: 56.5753
+ UPS: 7661.926922
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

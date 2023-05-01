@@ -1,71 +1,71 @@
 > Executing step 0
->> Running router on ./configurations/Rounds/4corners_neighborhoods.net.xml-test_Random-0/Trips_File.rou.xml
->>> Begin time: 2023-04-24 19:55:53.600512
->>> End time: 2023-04-24 19:55:54.025276
->>> Duration: 0:00:00.424764
+>> Running router on ./configurations/Rounds/Random_English.net.xml-small_test_R-0/Trips_File.rou.xml
+>>> Begin time: 2023-04-30 15:27:06.164903
+>>> End time: 2023-04-30 15:27:06.679548
+>>> Duration: 0:00:00.514645
 <<
 >> Running simulation
->>> Begin time: 2023-04-24 19:55:54.025276
->>> End time: 2023-04-24 19:56:40.079711
->>> Duration: 0:00:46.054435
+>>> Begin time: 2023-04-30 15:27:06.679548
+>>> End time: 2023-04-30 15:27:07.836962
+>>> Duration: 0:00:01.157414
 <<
-< Step 0 ended (duration: 0:00:46.479199)
+< Step 0 ended (duration: 0:00:01.672059)
 ------------------
 
 > Executing step 1
 >> Running router on 000/Trips_File_000.rou.alt.xml
->>> Begin time: 2023-04-24 19:56:40.106223
->>> End time: 2023-04-24 19:56:40.623057
->>> Duration: 0:00:00.516834
+>>> Begin time: 2023-04-30 15:27:07.852964
+>>> End time: 2023-04-30 15:27:08.508682
+>>> Duration: 0:00:00.655718
 <<
 >> Running simulation
->>> Begin time: 2023-04-24 19:56:40.623057
->>> End time: 2023-04-24 19:57:15.718630
->>> Duration: 0:00:35.095573
+>>> Begin time: 2023-04-30 15:27:08.508682
+>>> End time: 2023-04-30 15:27:09.203473
+>>> Duration: 0:00:00.694791
 <<
-< Step 1 ended (duration: 0:00:35.612407)
+< Step 1 ended (duration: 0:00:01.350509)
 ------------------
 
 > Executing step 2
 >> Running router on 001/Trips_File_001.rou.alt.xml
->>> Begin time: 2023-04-24 19:57:15.762617
->>> End time: 2023-04-24 19:57:16.302321
->>> Duration: 0:00:00.539704
+>>> Begin time: 2023-04-30 15:27:09.219469
+>>> End time: 2023-04-30 15:27:10.371489
+>>> Duration: 0:00:01.152020
 <<
 >> Running simulation
->>> Begin time: 2023-04-24 19:57:16.302321
->>> End time: 2023-04-24 19:57:58.769338
->>> Duration: 0:00:42.467017
+>>> Begin time: 2023-04-30 15:27:10.371489
+>>> End time: 2023-04-30 15:27:11.002171
+>>> Duration: 0:00:00.630682
 <<
-< Step 2 ended (duration: 0:00:43.006721)
+< Step 2 ended (duration: 0:00:01.782702)
 ------------------
 
 > Executing step 3
 >> Running router on 002/Trips_File_002.rou.alt.xml
->>> Begin time: 2023-04-24 19:57:59.033252
->>> End time: 2023-04-24 19:57:59.847990
->>> Duration: 0:00:00.814738
+>>> Begin time: 2023-04-30 15:27:11.016166
+>>> End time: 2023-04-30 15:27:12.191360
+>>> Duration: 0:00:01.175194
 <<
 >> Running simulation
->>> Begin time: 2023-04-24 19:57:59.847990
->>> End time: 2023-04-24 19:58:44.512805
->>> Duration: 0:00:44.664815
+>>> Begin time: 2023-04-30 15:27:12.191360
+>>> End time: 2023-04-30 15:27:12.966777
+>>> Duration: 0:00:00.775417
 <<
-< Step 3 ended (duration: 0:00:45.479553)
+< Step 3 ended (duration: 0:00:01.950611)
 ------------------
 
 > Executing step 4
 >> Running router on 003/Trips_File_003.rou.alt.xml
->>> Begin time: 2023-04-24 19:58:44.584781
->>> End time: 2023-04-24 19:58:45.481577
->>> Duration: 0:00:00.896796
+>>> Begin time: 2023-04-30 15:27:12.989949
+>>> End time: 2023-04-30 15:27:13.497662
+>>> Duration: 0:00:00.507713
 <<
 >> Running simulation
->>> Begin time: 2023-04-24 19:58:45.481577
->>> End time: 2023-04-24 19:59:19.971143
->>> Duration: 0:00:34.489566
+>>> Begin time: 2023-04-30 15:27:13.497662
+>>> End time: 2023-04-30 15:27:14.592504
+>>> Duration: 0:00:01.094842
 <<
-< Step 4 ended (duration: 0:00:35.386362)
+< Step 4 ended (duration: 0:00:01.602555)
 ------------------
 
-dua-iterate ended (duration: 0:03:26.396625)
+dua-iterate ended (duration: 0:00:08.445856)

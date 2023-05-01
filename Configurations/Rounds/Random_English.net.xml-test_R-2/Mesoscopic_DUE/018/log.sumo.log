@@ -1,0 +1,14 @@
+Loading net-file from 'C:\Users\Local_Man\Desktop\Stolen Music\school stuff for college\Semester 15 (UH Graduate School)\COSC 6364 Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\Random_English.net.xml' ... done (195ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1287.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 26.29s
+ Real time factor: 48.9558
+ UPS: 6667.959983
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

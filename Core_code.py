@@ -19,17 +19,9 @@ else:
 csv_data = []
 #data2Push = [] #new data aquired that will be pushed
 
-def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies=[],num_trips=-1,use_random_trips=False,maximum_release_time=500,Random_trips=False):
-    #Round_name - id for this set of vehicle origin destination matrix.
-    #net_file - name of the network
-    #start_edges set of valid origins
-    #end_edges - set of valid destinations
-    #
+def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies=[],num_trips=-1,use_random_trips=False,maximum_release_time=500):
     if num_trips == -1:
         return
-    
-    
-    
     
     if not os.path.isdir("./configurations/Rounds/"+Round_name):
         os.mkdir("./configurations/Rounds/"+Round_name)
@@ -49,9 +41,12 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
         release_times = sorted(release_times)
 
         #Use this for random trips please.
-        if Random_trips or not start_edges:
+        if use_random_trips or not start_edges:
             net = sumolib.net.readNet('./configurations/maps/'+net_file)
             edges = net.getEdges()
+            start_edges = []
+            end_edges = []
+            dependencies = {}
             for current_edge in edges:
                 current_edge_id = current_edge.getID()
                 
@@ -81,12 +76,6 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
 
             xml.appendChild(child)
             
-            #v_now = Util.Vehicle(str(x+2),start_edge, end_edge, float(release_times[x]), int(ddl_now))
-
-            
-            #vehicle_dict[str(x+2)]=v_now
-        #print("why are you empty:",deadLines2Push)
-        #data2Csv_Deadlines(deadlines,Round_name) #insert file name into this as argument
 
         xml_str = root.toprettyxml(indent ="\t") 
         trip_file = "./configurations/Rounds/"+Round_name+'/Trips_File.rou.xml'
@@ -98,7 +87,7 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
        
 def run_SUMO(out_dir,x,net_file):
     sumoBinary = sumolib.checkBinary("sumo")
-    sumoCmd = [sumoBinary,#from duaiterate
+    sumoCmd = [sumoBinary,#from duaiterate.py
                 '--save-configuration',  out_dir +"/%03i"%x+'/myconfig.sumocfg', #/myconfig_0.sumocfg",
                 '--log', out_dir +"/%03i"%x+ "/log.sumo.log",
                 '--net-file', os.getcwd() + "\\configurations\\maps\\"+net_file,#net_file_temp,# "../../../../../maps/"+net_file,
@@ -108,9 +97,6 @@ def run_SUMO(out_dir,x,net_file):
                 '--summary-output',out_dir +"/%03i"%x+ "/summary.xml",
                 '--statistic-output',out_dir+"/%03i"%x+"/stats_output.xml"
                     ]
-                #print("the directory:", the_directory)
-
-                #print("SUMOCMD:",sumoCmd)
     subprocess.call(sumoCmd)
     subprocess.call([sumoBinary, "-c", out_dir+"/%03i"%x+'/myconfig.sumocfg', \
                 "--tripinfo-output", out_dir+"/%03i"%x+'/trips.trips.xml', \
@@ -133,12 +119,14 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
         c_time = time.time()-c_time        
         for x in range(0,Num_Iterations):
             try:
+                if os.path.isdir(out_dir+"/%03i"%x):
+                    shutil.rmtree(out_dir+"/%03i"%x)
                 shutil.move("%03i"%x,out_dir)
             except Exception:
                 pass
             run_SUMO(out_dir,x,net_file)
         for x in range(0,Num_Iterations):
-            report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5",time)
+            report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5",time = c_time)
         pass
 
 
@@ -156,56 +144,49 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):#
 
         for x in range(0,Num_Iterations):
             try:
+                if os.path.isdir(out_dir+"/%03i"%x):
+                    shutil.rmtree(out_dir+"/%03i"%x)
+
                 shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_DUE")
             except Exception:
                 pass
             run_SUMO(out_dir,x,net_file)
                         
         for x in range(0,Num_Iterations):
-            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-DUE.9.5",time)
+            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-DUE.9.5",time = c_time)
         pass
 
+    #macroscopic
     if micro_meso_macro == 3: # macroscopic.
         out_dir = "./configurations/Rounds/"+Round_name+"/Macroscopic_DUE"
         if not os.path.isdir(out_dir):
             os.mkdir(out_dir)
-        #Need to run these each time in order to get computation time. #Will overwrite results!!!!
-        cmd = ["./SUMO_TOOls/marouter", "-r" , "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml","-n",\
-        "./configurations/maps/"+net_file,"-i",str(Num_Iterations),"-o", out_dir+"/Macro_Routes.xml"]
-
-        c_time = time.time()
-        subprocess.call(cmd)
-        c_time = time.time()-c_time  
             
-            #need to run sumo here...
-            run_SUMO(out_dir,x,net_file)
-            
-        report("./configurations/Rounds/"+Round_name+'/Macroscopic_DUE', Round_name,0,"duaIterate","Macro-DUE.9.5",time)
-
-    pass
-    if micro_meso_macro == 4: # mesoscopic
-        out_dir = "./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE"
-        if not os.path.isdir(out_dir):
-            os.mkdir(out_dir)
         #Need to run these each time in order to get computation time. #Will overwrite results!!!!
-        cmd = ["python", "./SUMO_Tools/duaIterate.py", "-t", "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml",\
-                "-n","./configurations/maps/"+net_file,"-l",str(Num_Iterations), "-m"]
-        c_time = time.time()
-        subprocess.call(cmd)
-        c_time = time.time()-c_time  # TODO get time from just running the simulation or also from running SUMO to verify the results
-
         for x in range(0,Num_Iterations):
             try:
-                shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Mesoscopic_SUMO_DUE")
+                os.mkdir("%03i"%x)
+                if os.path.isdir(out_dir+"/%03i"%x):
+                    shutil.rmtree(out_dir+"/%03i"%x)
+                
             except Exception:
                 pass
-            sumoBinary = sumolib.checkBinary("sumo")
+            
+            cmd = ["./SUMO_TOOls/marouter", "-r" , "./configurations/Rounds/"+Round_name+"/Trips_File.rou.xml","-n",\
+            "./configurations/maps/"+net_file,"-i",str(x+1),"-o", "./%03i"%x+'/Trips_File_%03i.rou.xml'%x]
+
+            c_time = time.time()
+            subprocess.call(cmd)
+            c_time = time.time()-c_time  
+            shutil.move("%03i"%x,"./configurations/Rounds/"+Round_name+"/Macroscopic_DUE")    
+            #need to run sumo here...
             run_SUMO(out_dir,x,net_file)
+                
+            report("./configurations/Rounds/"+Round_name+'/Macroscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Macro-DUE.9.5",time = c_time)
 
-        for x in range(0,Num_Iterations):
-            report("./configurations/Rounds/"+Round_name+'/Mesoscopic_SUMO_DUE/%03i'%x, Round_name,x,"duaIterate","Meso-SUMO-DUE.9.5",time)
-        pass
+    pass
 
+    
 def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #From https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
         
         doc2 = minidom
@@ -247,13 +228,11 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #F
         except Exception:
             pass
 
-        stat_o = doc.getElementsByTagName("statistics")
-        
+        Teleports = doc.getElementsByTagName("teleports")
+        Safety = doc.getElementsByTagName("safety")
 
         total_travel_time = 0
         max_travel_time = 0
-        deadline_overtime = 0
-        deadline_misses = 0
         for x in trip_infos:
             veh_id= float(x.getAttribute("id"))
             veh_fin = float(x.getAttribute("arrival"))
@@ -280,10 +259,12 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #F
         temp.append(max_travel_time)
         temp.append(len(trip_infos))
         temp.append(vehicles_finished)
-        temp.append(deadline_misses)
-        temp.append(deadline_overtime)
         temp.append(time)
-        
+        temp.append(Teleports[0].getAttribute("jam"))
+        temp.append(Teleports[0].getAttribute("yield"))
+        temp.append(Teleports[0].getAttribute("wrongLane"))
+        temp.append(Safety[0].getAttribute("collisions"))
+        temp.append(Safety[0].getAttribute("emergencyStops"))
         overall.append(temp)
         csv2Data('./History/results.csv')
         data2Csv_general(overall,'./History/results.csv')

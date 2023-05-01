@@ -1,0 +1,16 @@
+Loading net-file from '010/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (15ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '010/../edgedata.add.xml' ... done (13ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1744.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.83s
+ Real time factor: 2091.13
+ UPS: 108923.261391
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

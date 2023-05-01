@@ -1,0 +1,17 @@
+Loading net-file from 'C:\Users\Local_Man\Desktop\Stolen Music\school stuff for college\Semester 15 (UH Graduate School)\COSC 6364 Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\4corners_neighborhoods.net.xml' ... done (42ms).
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_152444265_152444267_2667633938_2667633955_2667633957_2667633963_2667633974_2667633975', linkIndex 18 has no controlling detector.
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1371.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 21.75s
+ Real time factor: 63.0316
+ UPS: 8088.731553
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

@@ -1,0 +1,21 @@
+Loading net-file from 'C:\Users\Local_Man\Desktop\Stolen Music\school stuff for college\Semester 15 (UH Graduate School)\COSC 6364 Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\Random_English.net.xml' ... done (340ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Warning: Teleporting vehicle '411'; waited too long (yield), lane='-325_1', time=802.00.
+Warning: Vehicle '411' ends teleporting on edge '319', time=802.00.
+Warning: Teleporting vehicle '353'; waited too long (yield), lane='-319_1', time=819.00.
+Warning: Vehicle '353' ends teleporting on edge '-117', time=819.00.
+Warning: Teleporting vehicle '415'; waited too long (yield), lane='-319_0', time=827.00.
+Warning: Vehicle '415' ends teleporting on edge '313', time=827.00.
+Simulation ended at time: 1344.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 25.54s
+ Real time factor: 52.6275
+ UPS: 7178.596601
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+ Teleports: 3 (Yield: 3)
+

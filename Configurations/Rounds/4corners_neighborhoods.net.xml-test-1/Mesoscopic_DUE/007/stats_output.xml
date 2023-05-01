@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-04-29 15:10:21 by Eclipse SUMO sumo Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\Local_Man\Desktop\Stolen%20Music\school%20stuff%20for%20college\Semester%2015%20(UH%20Graduate%20School)\COSC%206364%20Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\4corners_neighborhoods.net.xml"/>
+        <route-files value="./configurations/Rounds/4corners_neighborhoods.net.xml-test-1/Mesoscopic_DUE/007/Trips_File_007.rou.xml"/>
+    </input>
+
+    <output>
+        <summary-output value="./configurations/Rounds/4corners_neighborhoods.net.xml-test-1/Mesoscopic_DUE/007/summary.xml"/>
+        <tripinfo-output value="./configurations/Rounds/4corners_neighborhoods.net.xml-test-1/Mesoscopic_DUE/007/trips.trips.xml"/>
+        <statistic-output value="./configurations/Rounds/4corners_neighborhoods.net.xml-test-1/Mesoscopic_DUE/007/stats_output.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+
+    <report>
+        <log value="./configurations/Rounds/4corners_neighborhoods.net.xml-test-1/Mesoscopic_DUE/007/log.sumo.log"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <gui_only>
+        <quit-on-end value="true"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <vehicles loaded="1000" inserted="1000" running="0" waiting="0"/>
+    <teleports total="2" jam="0" yield="2" wrongLane="0"/>
+    <safety collisions="0" emergencyStops="0"/>
+    <persons loaded="0" running="0" jammed="0"/>
+    <personTeleports total="0" abortWait="0" wrongDest="0"/>
+    <vehicleTripStatistics count="1000" routeLength="1492.86" speed="8.03" duration="313.76" waitingTime="184.75" timeLoss="244.62" departDelay="3.27" departDelayWaiting="-1.00" totalTravelTime="313757.00" totalDepartDelay="3268.00"/>
+    <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>

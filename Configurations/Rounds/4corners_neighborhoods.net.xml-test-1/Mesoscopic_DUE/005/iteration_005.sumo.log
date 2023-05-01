@@ -5,12 +5,12 @@ Warning: Network contains internal links which are ignored. Vehicles will 'jump'
 Loading additional-files from '005/../edgedata.add.xml' ... done (2ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1110.00
+Simulation ended at time: 1107.00
 Reason: All vehicles have left the simulation.
 Performance: 
  Duration: 0.14s
- Real time factor: 7762.24
- UPS: 449909.090909
+ Real time factor: 7795.77
+ UPS: 454633.802817
 Vehicles: 
  Inserted: 1000
  Running: 0

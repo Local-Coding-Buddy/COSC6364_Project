@@ -1,0 +1,15 @@
+Loading net-file from '016/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (2ms).
+Loading additional-files from '016/../edgedata.add.xml' ... done (1ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 3132.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 16.60s
+ Real time factor: 188.732
+ UPS: 6479.300994
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
