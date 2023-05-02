@@ -1,159 +1,115 @@
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '000/iteration_000_Trips_File.duarcfg']
-Error: No connection between edge 'E6' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '8'.
-Error: The vehicle '8' has no valid route.
-Error: No connection between edge 'E1' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '12'.
-Error: The vehicle '12' has no valid route.
-Error: No connection between edge 'E3' and edge '-E2' found.
-Error: Mandatory edge '-E2' not reachable by vehicle '13'.
-Error: The vehicle '13' has no valid route.
-Error: No connection between edge '-E0' and edge 'E2' found.
-Error: Mandatory edge 'E2' not reachable by vehicle '16'.
-Error: The vehicle '16' has no valid route.
-Error: No connection between edge 'E1' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '21'.
-Error: The vehicle '21' has no valid route.
-Error: No connection between edge '-E2' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '23'.
-Error: The vehicle '23' has no valid route.
-Error: No connection between edge 'E1' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '27'.
-Error: The vehicle '27' has no valid route.
-Error: No connection between edge '-E5' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '29'.
-Error: The vehicle '29' has no valid route.
-Error: No connection between edge 'E1' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '32'.
-Error: The vehicle '32' has no valid route.
-Error: No connection between edge '-E0' and edge 'E1' found.
-Error: Mandatory edge 'E1' not reachable by vehicle '34'.
-Error: The vehicle '34' has no valid route.
-Error: No connection between edge 'E6' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '37'.
-Error: The vehicle '37' has no valid route.
-Error: No connection between edge 'E3' and edge '-E0' found.
-Error: Mandatory edge '-E0' not reachable by vehicle '43'.
-Error: The vehicle '43' has no valid route.
-Error: No connection between edge '-E5' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '44'.
-Error: The vehicle '44' has no valid route.
-Error: No connection between edge '-E5' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '54'.
-Error: The vehicle '54' has no valid route.
-Error: No connection between edge 'E6' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '63'.
-Error: The vehicle '63' has no valid route.
-Error: No connection between edge 'E3' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '92'.
-Error: The vehicle '92' has no valid route.
-Error: No connection between edge 'E6' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '94'.
-Error: The vehicle '94' has no valid route.
-Error: No connection between edge 'E3' and edge 'E4' found.
-Error: Mandatory edge 'E4' not reachable by vehicle '96'.
-Error: The vehicle '96' has no valid route.
-Error: No connection between edge 'E3' and edge '-E5' found.
-Error: Mandatory edge '-E5' not reachable by vehicle '97'.
-Error: The vehicle '97' has no valid route.
-Error: No connection between edge 'E3' and edge 'E4' found.
-Error: Mandatory edge 'E4' not reachable by vehicle '98'.
-Error: The vehicle '98' has no valid route.
-Error: No connection between edge 'E3' and edge 'E1' found.
-Error: Mandatory edge 'E1' not reachable by vehicle '99'.
-Error: The vehicle '99' has no valid route.
-Error: No connection between edge 'E3' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '101'.
-Error: The vehicle '101' has no valid route.
-Error: No connection between edge 'E3' and edge '-E1' found.
-Error: Mandatory edge '-E1' not reachable by vehicle '104'.
-Error: The vehicle '104' has no valid route.
-Error: No connection between edge '-E0' and edge '-E4' found.
-Error: Mandatory edge '-E4' not reachable by vehicle '113'.
-Error: The vehicle '113' has no valid route.
-Error: No connection between edge 'E1' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '116'.
-Error: The vehicle '116' has no valid route.
-Error: No connection between edge '-E2' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '119'.
-Error: The vehicle '119' has no valid route.
-Error: No connection between edge 'E2' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '121'.
-Error: The vehicle '121' has no valid route.
-Error: No connection between edge 'E6' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '122'.
-Error: The vehicle '122' has no valid route.
-Error: No connection between edge 'E5' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '123'.
-Error: The vehicle '123' has no valid route.
-Error: No connection between edge '-E5' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '125'.
-Error: The vehicle '125' has no valid route.
-Error: No connection between edge '-E1' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '126'.
-Error: The vehicle '126' has no valid route.
-Error: No connection between edge 'E3' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '129'.
-Error: The vehicle '129' has no valid route.
-Error: No connection between edge '-E0' and edge 'E3' found.
-Error: Mandatory edge 'E3' not reachable by vehicle '130'.
-Error: The vehicle '130' has no valid route.
-Error: No connection between edge '-E0' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '133'.
-Error: The vehicle '133' has no valid route.
-Error: No connection between edge 'E5' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '135'.
-Error: The vehicle '135' has no valid route.
-Error: No connection between edge 'E6' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '147'.
-Error: The vehicle '147' has no valid route.
-Error: No connection between edge 'E3' and edge '-E0' found.
-Error: Mandatory edge '-E0' not reachable by vehicle '148'.
-Error: The vehicle '148' has no valid route.
-Error: No connection between edge '-E0' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '151'.
-Error: The vehicle '151' has no valid route.
-Error: No connection between edge 'E3' and edge 'E4' found.
-Error: Mandatory edge 'E4' not reachable by vehicle '152'.
-Error: The vehicle '152' has no valid route.
-Error: No connection between edge 'E3' and edge 'E4' found.
-Error: Mandatory edge 'E4' not reachable by vehicle '154'.
-Error: The vehicle '154' has no valid route.
-Error: No connection between edge '-E3' and edge 'E0' found.
-Error: Mandatory edge 'E0' not reachable by vehicle '156'.
-Error: The vehicle '156' has no valid route.
-Error: No connection between edge '-E4' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '157'.
-Error: The vehicle '157' has no valid route.
-Error: No connection between edge '-E0' and edge 'E5' found.
-Error: Mandatory edge 'E5' not reachable by vehicle '159'.
-Error: The vehicle '159' has no valid route.
-Error: No connection between edge 'E3' and edge '-E1' found.
-Error: Mandatory edge '-E1' not reachable by vehicle '164'.
-Error: The vehicle '164' has no valid route.
-Error: No connection between edge '-E0' and edge 'E2' found.
-Error: Mandatory edge 'E2' not reachable by vehicle '165'.
-Error: The vehicle '165' has no valid route.
-Error: No connection between edge 'E4' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '170'.
-Error: The vehicle '170' has no valid route.
-Error: No connection between edge '-E2' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '171'.
-Error: The vehicle '171' has no valid route.
-Error: No connection between edge 'E4' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '172'.
-Error: The vehicle '172' has no valid route.
-Error: No connection between edge 'E3' and edge 'E1' found.
-Error: Mandatory edge 'E1' not reachable by vehicle '173'.
-Error: The vehicle '173' has no valid route.
-Error: No connection between edge 'E3' and edge 'E5' found.
-Error: Mandatory edge 'E5' not reachable by vehicle '176'.
-Error: The vehicle '176' has no valid route.
-Error: No connection between edge '-E0' and edge '-E5' found.
-Error: Mandatory edge '-E5' not reachable by vehicle '184'.
-Error: The vehicle '184' has no valid route.
-Error: No connection between edge 'E4' and edge '-E3' found.
-Error: Mandatory edge '-E3' not reachable by vehicle '189'.
-Error: The vehicle '189' has no valid route.
-Quitting (on error).
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '000/iteration_000.sumocfg']
+Loading net-file from '000/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (33ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '000/../edgedata.add.xml' ... done (3ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1079.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.17s
+ Real time factor: 6539.39
+ UPS: 387654.545455
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '001/iteration_001_Trips_File_000.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '001/iteration_001.sumocfg']
+Loading net-file from '001/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (38ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '001/../edgedata.add.xml' ... done (2ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1080.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.19s
+ Real time factor: 5714.29
+ UPS: 338481.481481
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '002/iteration_002_Trips_File_001.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '002/iteration_002.sumocfg']
+Loading net-file from '002/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (38ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '002/../edgedata.add.xml' ... done (3ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1080.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.17s
+ Real time factor: 6206.9
+ UPS: 367660.919540
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '003/iteration_003_Trips_File_002.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '003/iteration_003.sumocfg']
+Loading net-file from '003/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (30ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '003/../edgedata.add.xml' ... done (1ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1080.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.15s
+ Real time factor: 7012.99
+ UPS: 415409.090909
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\duarouter', '-c', '004/iteration_004_Trips_File_003.duarcfg']
+Success.
+-------------------------------------------------------------------------------
+['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '004/iteration_004.sumocfg']
+Loading net-file from '004/../configurations/maps/4corners_neighborhoods.net.xml' ... 
+Warning: Traffic light type 'actuated' cannot be used in mesoscopic simulation. Using 'static' as fallback.
+done (32ms).
+Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading additional-files from '004/../edgedata.add.xml' ... done (1ms).
+Loading done.
+Simulation version 1.16.0 started with time: 0.00.
+Simulation ended at time: 1080.00
+Reason: All vehicles have left the simulation.
+Performance: 
+ Duration: 0.15s
+ Real time factor: 7058.82
+ UPS: 418124.183007
+Vehicles: 
+ Inserted: 1000
+ Running: 0
+ Waiting: 0
+

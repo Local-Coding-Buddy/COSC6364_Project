@@ -1,3 +1,71 @@
 > Executing step 0
->> Running router on ./configurations/Rounds/Braess_Homebrew_fixed1.net.xml-test_R-0/Trips_File.rou.xml
->>> Begin time: 2023-05-02 14:01:13.295704
+>> Running router on ./configurations/Rounds/4corners_neighborhoods.net.xml-TA_test-0/Trips_File.rou.xml
+>>> Begin time: 2023-05-02 15:44:47.714832
+>>> End time: 2023-05-02 15:44:48.097245
+>>> Duration: 0:00:00.382413
+<<
+>> Running simulation
+>>> Begin time: 2023-05-02 15:44:48.097245
+>>> End time: 2023-05-02 15:44:48.603597
+>>> Duration: 0:00:00.506352
+<<
+< Step 0 ended (duration: 0:00:00.889755)
+------------------
+
+> Executing step 1
+>> Running router on 000/Trips_File_000.rou.alt.xml
+>>> Begin time: 2023-05-02 15:44:48.610585
+>>> End time: 2023-05-02 15:44:49.369636
+>>> Duration: 0:00:00.759051
+<<
+>> Running simulation
+>>> Begin time: 2023-05-02 15:44:49.370626
+>>> End time: 2023-05-02 15:44:49.890541
+>>> Duration: 0:00:00.519915
+<<
+< Step 1 ended (duration: 0:00:01.281957)
+------------------
+
+> Executing step 2
+>> Running router on 001/Trips_File_001.rou.alt.xml
+>>> Begin time: 2023-05-02 15:44:49.897538
+>>> End time: 2023-05-02 15:44:50.571924
+>>> Duration: 0:00:00.674386
+<<
+>> Running simulation
+>>> Begin time: 2023-05-02 15:44:50.571924
+>>> End time: 2023-05-02 15:44:51.077822
+>>> Duration: 0:00:00.505898
+<<
+< Step 2 ended (duration: 0:00:01.182284)
+------------------
+
+> Executing step 3
+>> Running router on 002/Trips_File_002.rou.alt.xml
+>>> Begin time: 2023-05-02 15:44:51.104942
+>>> End time: 2023-05-02 15:44:51.466605
+>>> Duration: 0:00:00.361663
+<<
+>> Running simulation
+>>> Begin time: 2023-05-02 15:44:51.467596
+>>> End time: 2023-05-02 15:44:51.940444
+>>> Duration: 0:00:00.472848
+<<
+< Step 3 ended (duration: 0:00:00.837497)
+------------------
+
+> Executing step 4
+>> Running router on 003/Trips_File_003.rou.alt.xml
+>>> Begin time: 2023-05-02 15:44:51.966436
+>>> End time: 2023-05-02 15:44:52.558292
+>>> Duration: 0:00:00.591856
+<<
+>> Running simulation
+>>> Begin time: 2023-05-02 15:44:52.558292
+>>> End time: 2023-05-02 15:44:53.032203
+>>> Duration: 0:00:00.473911
+<<
+< Step 4 ended (duration: 0:00:01.067774)
+------------------
+
+dua-iterate ended (duration: 0:00:05.336376)

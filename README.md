@@ -105,7 +105,7 @@ python main_for_executable.py
 ```
 or set the number of iterations low to soemthing like 5 and the number of rounds to 1 example:
 ```
-python main_for_executable.py -I 5 -R 1 -n Braess_Homebrew_fixed1.net.xml -D TA_test
+python main_for_executable.py -I 5 -R 1 -n 4corners_neighborhoods.net.xml -D TA_test
 ```
 Note that the above test has not actually been created yet so the make_trips() method will be called to actually create the trips for you. 
 (Since it's the braess network you should have something comparible to what I had in terms of output.)
