@@ -110,7 +110,7 @@ if __name__ == "__main__":
             make_Route_file(3,Round_name,network_file,num_iterations)
 
 
-
+# below chunk of code is to generate the graph shown at the end of execution.
 directory = os.getcwd()
 df = pd.read_csv("./History/results.csv")
 #code block for generating a convergence chart from what just ran.

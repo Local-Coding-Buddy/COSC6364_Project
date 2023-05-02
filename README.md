@@ -92,7 +92,7 @@ Run the file using the command: "python main_for_executable.py"
 	- Columns k - O are used to collect data regarding traffic incidents.
 
 #### Running the Executable: 
-TODO create executable.
+Since running the executable will still require the installation of SUMO I am ommiting this after gaining permission from Rishabh. I have included a video demo instead. 
 ## Acknowledgements
 A Special thank you to Guangli Dai, Pavan Kumar Plarui, Thomas Carmichael, Albert M. K. Cheng and Risto Miikkulainen for their work on the original STR SUMO repository that this code is based on.
 https://github.com/guangli-dai/Selfless-Traffic-Routing-Testbed
