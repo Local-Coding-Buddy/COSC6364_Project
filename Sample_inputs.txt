@@ -1,0 +1,11 @@
+Code At: https://github.com/Local-Coding-Buddy/COSC6364_Project
+
+Inputs used for report (can take up to 5 hours to run):
+python main_for_executable.py -r -I 30 -R 5 -n Braess_Homebrew_fixed1.net.xml -D test
+python main_for_executable.py -I 30 -R 5 -n 4corners_neighborhoods.net.xml -D test
+python main_for_executable.py -I 30 -R 5 -n Random_English.net.xml -D test
+
+TA test inputs:
+python main_for_executable.py
+python main_for_executable.py -I 5 -R 1 -n Braess_Homebrew_fixed1.net.xml -D TA_test
+

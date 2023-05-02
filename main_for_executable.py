@@ -46,7 +46,7 @@ args = parser.parse_args()
 #https://github.com/eclipse/sumo
 
 #all input hyper parameters
-network_file =args.network#'Braess_Homebrew_fixed1.net.xml'#"Braess_Homebrew_fixed1.net.xml" #'4corners_neighborhoods.net.xml'#'Random_English.net.xml'#"Braess_Homebrew_fixed1.net.xml"#"4corners_neighborhoods.net.xml" #Avenue_E_stafford_Texas.net.xml
+network_file =args.network#'Braess_Homebrew_fixed1.net.xml' #'4corners_neighborhoods.net.xml'#'Random_English.net.xml'#"Braess_Homebrew_fixed1.net.xml"
 Round_name_base =args.round_ID#'small_test'# "On_Project"#be sure to add _Random here if you want to use the random trips 
 #(not a requirement just to keep track of which trips were generated randomly)
 num_iterations = args.Iterations

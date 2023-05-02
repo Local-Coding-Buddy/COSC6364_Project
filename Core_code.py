@@ -128,7 +128,7 @@ def make_Route_file(micro_meso_macro,Round_name,net_file,Num_Iterations):# code 
             except Exception:
                 pass
             run_SUMO(out_dir,x,net_file)
-        for x in range(0,Num_Iterations):recording data and writing it to the results.csv file
+        for x in range(0,Num_Iterations):#recording data and writing it to the results.csv file
             report("./configurations/Rounds/"+Round_name+'/Microscopic_DUE/%03i'%x, Round_name,x,"duaIterate","Micro-DUE.9.5",time = c_time)
         pass
 
@@ -272,6 +272,7 @@ def report(location, Round_name,iter,run_id,version,deadline_dict={},time=0): #F
         csv2Data('./History/results.csv') # getting data from results.csv
         data2Csv_general(overall,'./History/results.csv') #writing data to results.csv
 
+#from https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
 def data2Csv_general(data_selected,directory): 
     with open(directory, 'w',newline='') as f:
         global csv_data
@@ -287,7 +288,7 @@ def data2Csv_general(data_selected,directory):
         f.flush()
         f.close    
  
-
+#from https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
 def csv2Data(file_name_and_directory):
     global csv_data
     #reading csv data from file to be added onto in report and the data2Csv method
