@@ -18,16 +18,15 @@ else:
 
 csv_data = []
 #data2Push = [] #new data aquired that will be pushed
-
+# creates the trips for each round. Trips in this case are the vehicles their departure time, and their origin and destination.
 def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies=[],num_trips=-1,use_random_trips=False,maximum_release_time=500):
-    if num_trips == -1:
+    if num_trips == -1: # if no number of trips given.
         return
     
-    if not os.path.isdir("./configurations/Rounds/"+Round_name):
+    if not os.path.isdir("./configurations/Rounds/"+Round_name):#if there does not aleady exist trips for the round
         os.mkdir("./configurations/Rounds/"+Round_name)
-    #file_name = "str_sumo.rou.xml" # this should stay the same shouldn't have to change to dynamic I believe
         vehicle_dict = {}
-        root = minidom.Document()
+        root = minidom.Document()#creating xml file
         xml = root.createElement('routes')
         xml.setAttribute('xmlns:xsi','"http://www.w3.org/2001/XMLSchema-instance"')
         xml.setAttribute('xsi:noNamespaceSchemaLocation','"http://sumo.dlr.de/xsd/routes_file.xsd"')
@@ -37,7 +36,7 @@ def make_Trips_File(Round_name,net_file,start_edges=[],end_edges=[],dependencies
         # release times have to be sorted in the route file.
         release_times =[]
         for x in range(0,num_trips):
-            release_times.append(random.randint(0,maximum_release_time)) # 400
+            release_times.append(random.randint(0,maximum_release_time)) # getting random release times.
         release_times = sorted(release_times)
 
         #Use this for random trips please.

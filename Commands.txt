@@ -1,0 +1,1 @@
+python main_for_executable.py > out.txt
