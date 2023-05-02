@@ -1,12 +1,12 @@
-Loading net-file from 'C:\Users\Local_Man\Desktop\Stolen Music\school stuff for college\Semester 15 (UH Graduate School)\COSC 6364 Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\Braess_Homebrew_fixed1.net.xml' ... done (2ms).
+Loading net-file from 'C:\Users\Local_Man\Desktop\Stolen Music\school stuff for college\Semester 15 (UH Graduate School)\COSC 6364 Nikolaos\SUMO_Project\COSC6364_Project\configurations\maps\Braess_Homebrew_fixed1.net.xml' ... done (3ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
 Simulation ended at time: 3872.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 53.14s
- Real time factor: 72.8682
- UPS: 7671.340121
+ Duration: 47.63s
+ Real time factor: 81.295
+ UPS: 8558.483277
 Vehicles: 
  Inserted: 1000
  Running: 0

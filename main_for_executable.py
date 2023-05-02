@@ -7,6 +7,9 @@ from datetime import datetime
 import sumolib
 from Core_code import *
 import argparse
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -80,6 +83,7 @@ else:
 if Random_trips or not start_edges:
     Round_name_base +="_R"
 
+
 if __name__ == "__main__":
     #code from https://github.com/Local-Coding-Buddy/Recursive-DUE-STR
     
@@ -106,11 +110,44 @@ if __name__ == "__main__":
         if use_macro:
             make_Route_file(3,Round_name,network_file,num_iterations)
 
-        # if use_meso_SUMO:
-        #     make_Route_file(4,Round_name,network_file,num_iterations)
 
-      
-    
 
-    #todo fix random trips 
-    #todo figure out marouter if there is a summary output otherwise use SUMO to get travel time estimation.
+directory = os.getcwd()
+df = pd.read_csv("./History/results.csv")
+#code block for generating a convergence chart from what just ran.
+base_name =  network_file +"-"+Round_name_base+"-"
+criteria = 'Average_travel_Time'#"Deadline Misses" # should literally be called criterion lmao
+
+
+lst = ['Micro-DUE.9.5', 'Meso-DUE.9.5', 'Macro-DUE.9.5']
+range_min = 0
+range_max = round_max
+
+iterations = num_iterations
+for i in range(range_min,range_max):#number of tests
+    data_results = []
+    for i3 in range(0,len(lst)):#number of models
+        data_results.append([])
+    cnt = 0
+
+    for i4 in lst:
+        
+        for i2 in range(0,iterations):#number of iterations.
+            working_name_SE = base_name + str(i)+"-Iteration-" + str(i2)# remember with my method I start at 1
+            x=df[criteria].loc[(df['Version']==i4)&(df['Round_name']==working_name_SE)]
+            if len(x.values) > 0:
+                data_results[cnt].append(x.values[0])
+        cnt+=1
+    print(data_results)
+    plt.xlabel('Iteration')
+    plt.ylabel(criteria+" (Seconds)")
+    plt.title("Round "+str(i)+" For Network: "+str(network_file))
+    cnt = 0
+    for i4 in lst:
+        
+        plt.plot(data_results[cnt],label=i4,linewidth = 7.5)
+        cnt+=1
+    plt.xticks(np.arange(0,iterations+1,10), np.arange(0,iterations+1,10))
+    plt.legend()
+    plt.grid()
+    plt.show()    

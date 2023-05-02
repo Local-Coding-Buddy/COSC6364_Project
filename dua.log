@@ -4,16 +4,15 @@ Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '000/iteration_000.sumocfg']
 Loading net-file from '000/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (2ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
-Loading additional-files from '000/../edgedata.add.xml' ... done (2ms).
+Loading additional-files from '000/../edgedata.add.xml' ... done (6ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 2403.00
+Simulation ended at time: 3133.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.65s
- Real time factor: 3674.31
- UPS: 192850.152905
+ Duration: 13.34s
+ Real time factor: 234.822
+ UPS: 7974.666467
 Vehicles: 
  Inserted: 1000
  Running: 0
@@ -25,16 +24,15 @@ Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '001/iteration_001.sumocfg']
 Loading net-file from '001/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (2ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
 Loading additional-files from '001/../edgedata.add.xml' ... done (1ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1730.00
+Simulation ended at time: 3860.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.23s
- Real time factor: 7587.72
- UPS: 400399.122807
+ Duration: 48.43s
+ Real time factor: 79.706
+ UPS: 8455.232510
 Vehicles: 
  Inserted: 1000
  Running: 0
@@ -46,16 +44,15 @@ Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '002/iteration_002.sumocfg']
 Loading net-file from '002/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (2ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
 Loading additional-files from '002/../edgedata.add.xml' ... done (2ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1731.00
+Simulation ended at time: 3616.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.60s
- Real time factor: 2865.89
- UPS: 151130.794702
+ Duration: 43.22s
+ Real time factor: 83.6592
+ UPS: 8585.845499
 Vehicles: 
  Inserted: 1000
  Running: 0
@@ -66,17 +63,16 @@ Vehicles:
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '003/iteration_003.sumocfg']
-Loading net-file from '003/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (2ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading net-file from '003/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (3ms).
 Loading additional-files from '003/../edgedata.add.xml' ... done (1ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1732.00
+Simulation ended at time: 3318.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.76s
- Real time factor: 2267.02
- UPS: 119429.319372
+ Duration: 30.29s
+ Real time factor: 109.53
+ UPS: 8524.444591
 Vehicles: 
  Inserted: 1000
  Running: 0
@@ -87,17 +83,16 @@ Vehicles:
 Success.
 -------------------------------------------------------------------------------
 ['C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo', '-c', '004/iteration_004.sumocfg']
-Loading net-file from '004/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (3ms).
-Warning: Network contains internal links which are ignored. Vehicles will 'jump' across junctions and thus underestimate route lengths and travel times.
+Loading net-file from '004/../configurations/maps/Braess_Homebrew_fixed1.net.xml' ... done (2ms).
 Loading additional-files from '004/../edgedata.add.xml' ... done (1ms).
 Loading done.
 Simulation version 1.16.0 started with time: 0.00.
-Simulation ended at time: 1733.00
+Simulation ended at time: 3188.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 0.21s
- Real time factor: 8213.27
- UPS: 432118.483412
+ Duration: 21.08s
+ Real time factor: 151.219
+ UPS: 8529.978180
 Vehicles: 
  Inserted: 1000
  Running: 0

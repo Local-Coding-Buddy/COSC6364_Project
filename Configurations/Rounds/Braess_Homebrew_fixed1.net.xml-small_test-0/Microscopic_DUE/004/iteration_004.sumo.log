@@ -5,9 +5,9 @@ Simulation version 1.16.0 started with time: 0.00.
 Simulation ended at time: 3188.00
 Reason: All vehicles have left the simulation.
 Performance: 
- Duration: 22.24s
- Real time factor: 143.326
- UPS: 8084.745763
+ Duration: 21.08s
+ Real time factor: 151.219
+ UPS: 8529.978180
 Vehicles: 
  Inserted: 1000
  Running: 0
